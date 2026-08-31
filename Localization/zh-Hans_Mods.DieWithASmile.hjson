@@ -1,0 +1,79 @@
+DisplayName: The End Of A Calamity 菜单主题
+
+UI: {
+	MainMenuMusic: 主菜单音乐
+	MenuBackground: 菜单背景
+	MenuBackgrounds: 菜单背景
+	FollowMusic: 跟随音乐
+	ShuffleBackgrounds: 随机背景
+	ShuffleLogos: 随机标志
+	HideMusicPlayer: 隐藏音乐播放器
+	ShowMusicPlayer: 显示音乐播放器
+	ShuffleEvery: 每 {0} 秒更换
+	ShuffleOnLeave: 仅在离开世界时
+	ShufflePickHint: 勾选要参与随机轮换的背景
+	HiddenBackgrounds: 已隐藏背景
+	ShowHiddenBackgrounds: 已隐藏
+	ShowVisibleBackgrounds: 可见
+	MenuLogo: 菜单标志
+	MenuLogos: 菜单标志
+	EditPosition: 编辑位置
+	SaveLayout: 保存
+	ScrollToResize: 滚轮缩放
+	DragToPan: 拖动空白处平移背景
+	SkyCoveredBy: 正在盖住来自 {0} 的标题天空
+	TmlBackground: tModLoader
+	VanillaBackground: 原版
+	AccentCrimson: 绯红
+	AccentPurple: 紫色
+	AccentRose: 玫红
+	AccentGold: 金色
+	AccentTeal: 青绿
+	AccentIce: 冰蓝
+	AccentEmber: 琥珀
+	AccentMint: 薄荷
+	UploadLogo: 上传标志
+	UploadBackground: 上传背景
+	LogoClassic: 经典
+	LogoGothic: 哥特
+	LogoOrbit: 光环
+	LogoHands: 双手
+	LogoSticker: 贴纸
+	SceneCalamitas: Calamitas
+	SceneDontForget: Don't Forget
+	SceneComeAlong: Come Along with Me
+	SceneMeadow: Last meeting
+	SceneYharim: Yharim Never Die
+	SceneWitch: Witch of Supreme Memories
+	SceneSoul: The Soul of the Universe
+	VanillaForest: 森林
+	VanillaCorruption: 腐化
+	VanillaCrimson: 猩红
+	VanillaHallow: 神圣
+	VanillaJungle: 丛林
+	VanillaSnow: 雪原
+	VanillaDesert: 沙漠
+	VanillaOcean: 海洋
+	VanillaMushroom: 发光蘑菇
+	Playlist: 播放列表
+	UploadingSong: 正在上传歌曲
+	Cancel: 取消
+	Close: 关闭
+	Rename: 重命名
+	Done: 完成
+	Delete: 删除
+	Sure: 确定？
+	OpenMusicFolder: 打开音乐文件夹
+	ClickBrokenFolder: 点击打开 Broken 文件夹
+	RenameHint: 重命名会保存演唱者。无法播放的歌曲会移到 Broken 文件夹。
+	ClickRenameArtist: 点击重命名演唱者
+	ArtistPlaceholder: 演唱者名称...
+	ConflictTitle: 必须禁用 Calamity Entropy
+	ConflictBody: 根据权利方要求，必须禁用 Calamity Entropy 才能使用 The End Of A Calamity Menu Theme。在解决此冲突之前，其他菜单按钮不可用。若两个模组再次同时启用，此窗口会再次出现。
+	ConflictOurName: The End Of A Calamity Menu Theme
+	ConflictEnabled: 已启用
+	ConflictRemoveEntropy: 禁用并删除 Calamity Entropy，然后重新加载
+	ConflictRemoveUs: 禁用并删除 The End Of A Calamity Menu Theme，然后重新加载
+	ConflictExit: 退出游戏
+	ConflictWorking: 处理中…
+}

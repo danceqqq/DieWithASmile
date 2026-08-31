@@ -1,0 +1,79 @@
+DisplayName: The End Of A Calamity 메뉴 테마
+
+UI: {
+	MainMenuMusic: 메인 메뉴 음악
+	MenuBackground: 메뉴 배경
+	MenuBackgrounds: 메뉴 배경
+	FollowMusic: 음악 따라가기
+	ShuffleBackgrounds: 배경 셔플
+	ShuffleLogos: 로고 셔플
+	HideMusicPlayer: 플레이어 숨기기
+	ShowMusicPlayer: 플레이어 보이기
+	ShuffleEvery: {0}초마다 변경
+	ShuffleOnLeave: 월드에서 나올 때만
+	ShufflePickHint: 체크해서 셔플할 배경을 고르세요
+	HiddenBackgrounds: 숨긴 배경
+	ShowHiddenBackgrounds: 숨김
+	ShowVisibleBackgrounds: 표시
+	MenuLogo: 메뉴 로고
+	MenuLogos: 메뉴 로고
+	EditPosition: 위치 편집
+	SaveLayout: 저장
+	ScrollToResize: 스크롤로 크기 조절
+	DragToPan: 빈 곳을 드래그해 배경을 이동
+	SkyCoveredBy: {0}의 타이틀 하늘을 덮는 중
+	TmlBackground: tModLoader
+	VanillaBackground: 바닐라
+	AccentCrimson: 진홍
+	AccentPurple: 보라
+	AccentRose: 장미
+	AccentGold: 금색
+	AccentTeal: 청록
+	AccentIce: 얼음
+	AccentEmber: 석양
+	AccentMint: 민트
+	UploadLogo: 로고 올리기
+	UploadBackground: 배경 올리기
+	LogoClassic: 클래식
+	LogoGothic: 고딕
+	LogoOrbit: 링
+	LogoHands: 손
+	LogoSticker: 스티커
+	SceneCalamitas: Calamitas
+	SceneDontForget: Don't Forget
+	SceneComeAlong: Come Along with Me
+	SceneMeadow: Last meeting
+	SceneYharim: Yharim Never Die
+	SceneWitch: Witch of Supreme Memories
+	SceneSoul: The Soul of the Universe
+	VanillaForest: 숲
+	VanillaCorruption: 타락
+	VanillaCrimson: 진홍
+	VanillaHallow: 신성
+	VanillaJungle: 정글
+	VanillaSnow: 설원
+	VanillaDesert: 사막
+	VanillaOcean: 바다
+	VanillaMushroom: 발광 버섯
+	Playlist: 재생목록
+	UploadingSong: 노래 올리는 중
+	Cancel: 취소
+	Close: 닫기
+	Rename: 이름
+	Done: 완료
+	Delete: 삭제
+	Sure: 확실함?
+	OpenMusicFolder: 음악 폴더 열기
+	ClickBrokenFolder: 클릭해서 Broken 폴더 열기
+	RenameHint: 이름 변경은 아티스트를 저장합니다. 재생할 수 없는 곡은 Broken 폴더로 옮겨집니다.
+	ClickRenameArtist: 아티스트 이름을 바꾸려면 클릭
+	ArtistPlaceholder: 아티스트 이름...
+	ConflictTitle: Calamity Entropy를 꺼야 합니다
+	ConflictBody: 권리 보유자의 요구에 따라 The End Of A Calamity Menu Theme를 쓰려면 Calamity Entropy를 비활성화해야 합니다. 이 충돌을 해결할 때까지 다른 메뉴 버튼은 잠깁니다. 두 모드가 다시 함께 켜져 있으면 이 창이 다시 나타납니다.
+	ConflictOurName: The End Of A Calamity Menu Theme
+	ConflictEnabled: 활성화됨
+	ConflictRemoveEntropy: Calamity Entropy를 끄고 삭제한 뒤 다시 로드
+	ConflictRemoveUs: The End Of A Calamity Menu Theme를 끄고 삭제한 뒤 다시 로드
+	ConflictExit: 게임 종료
+	ConflictWorking: 처리 중…
+}

@@ -1,0 +1,76 @@
+[h1]The End Of A Calamity Menu Theme[/h1]
+A fan-made tModLoader main menu theme inspired by Calamitas and the song "Die With A Smile".
+
+This mod is [b]client-side[/b] and only changes the title screen. You can keep it enabled in multiplayer without the server or other players needing it. It does not add items, bosses, or gameplay.
+
+[h2]Features[/h2]
+[list]
+[*][b]Client-side title screen[/b] — custom art, logo, menu styling, and nothing else in the game
+[*][b]Collapsible music player[/b] with a reactive spectrum that follows the playing audio, including custom uploads, and freezes when paused
+[*][b]Draggable player[/b] — hover to expand, then drag by empty space; the collapsed circle stays with it. The position is saved after leaving a world, restarting, or reloading the mod
+[*][b]Playlist[/b] — play, pause, skip, seek, loop one track, or shuffle your enabled songs
+[*][b]Custom uploads[/b] — add your own songs from the player; MP3 and WAV convert to OGG with a progress bar. Click a custom track's artist name to rename it (tags are read on upload)
+[*][b]Broken folder[/b] — unplayable songs are skipped and moved so the mod still loads
+[*][b]Background gallery[/b] — follow the music, lock a scene, or shuffle backgrounds every 0–15 seconds (click scenes to choose the pool; 0 only changes when you leave a world)
+[*][b]Logo gallery[/b] — five title-screen logos, including layered hand and sticker variants, plus uploads and other mods' menus
+[*][b]Custom art[/b] — PNG/JPEG logos and wallpapers in DieWithASmile/logo and DieWithASmile/wallpaper
+[*][b]Other-mod skies[/b] — pick another enabled menu theme's title background (including Wrath of the Gods) or Terraria's default Forest sky; gallery cards use the tModLoader logo or that mod's icon
+[*][b]Edit Position[/b] — drag the logo, player, and menu buttons; scroll to resize the logo; pan uploaded wallpapers; Save stores the layout
+[*][b]Accent colors[/b] — swatches in the galleries retint the player, hover, buttons, and UI icons (darker idle, lighter on hover)
+[*][b]Scene-changing tracks[/b] — Don't Forget fades into a Deltarune-inspired heart scene; Come Along with Me fades into a letter scene with mouse-reactive hands
+[*][b]Gallery arts[/b] — Calamitas, Don't Forget, Come Along with Me, Last meeting, Yharim Never Die, Witch of Supreme Memories, and The Soul of the Universe
+[*][b]Main Menu Music[/b] volume slider under Settings → Volume
+[*][b]Smooth music fades[/b] when mods finish loading, when entering a world, and when returning to the menu
+[*][b]Persistence[/b] — selected theme, playlist edits, uploads, loop, shuffle, background choice, volume, and player position are remembered
+[/list]
+
+[h2]Playlist[/h2]
+[list]
+[*][b]Die With A Smile[/b] — Lady Gaga & Bruno Mars, cover by Celine Wanyi
+[*][b]I Will Survive[/b] — Gloria Gaynor, cover by Jennel Garcia
+[*][b]Goodbye To A World[/b] — Porter Robinson (requested by @yucky beastling)
+[*][b]Don't Forget[/b] — Toby Fox · Laura Shigihara (requested by Roaring Knight)
+[*][b]Come Along with Me[/b] — Ashley Eriksson, cover by Ariela (requested by @Binding [ANDY])
+[/list]
+
+[h2]Compatibility[/h2]
+Compatible with [b]Sam's Cooler Menu Screen[/b]. If that core theme is selected, the music player still collapses to a circle until you hover it, and can be dragged like in the standard menu (requested by @Mihail04).
+
+[h2]Credits[/h2]
+[list]
+[*][b]Background art:[/b] #Comfortable-Mark5714 (6ekoh), @momodzmz
+[*][b]Artwork fitting and refinements:[/b] @Neshumi
+[*][b]Logo:[/b] #AscendedMolly (Aurora)
+[*][b]Original song:[/b] "Die With A Smile" — Lady Gaga & Bruno Mars
+[*][b]Cover performer:[/b] Celine Wanyi
+[*][b]Additional menu cover:[/b] "I Will Survive" — Gloria Gaynor, performed by Jennel Garcia
+[*][b]Additional menu track:[/b] "Goodbye To A World" — Porter Robinson, requested by @yucky beastling
+[*][b]Additional menu track:[/b] "Don't Forget" — Toby Fox · Laura Shigihara, requested by Roaring Knight
+[*][b]Additional menu track:[/b] "Come Along with Me" — Ashley Eriksson, cover by Ariela, requested by @Binding [ANDY]
+[*][b]CoolerMenu compatibility, including collapse-to-circle:[/b] requested by @Mihail04
+[*][b]Title-screen gallery and hide-player toggle:[/b] requested by @pixel
+[*][b]Custom song uploads and playlist editing:[/b] requested by @Schiz, @Vonnarch, @Tenciv, @EpicbowserDX, @pixel
+[*][b]Custom artist names:[/b] requested by @Vonnarch
+[*][b]Menu theme persists after restart:[/b] requested by @MPyre
+[*][b]Main Menu Music volume:[/b] requested by @TheRubick09
+[*][b]Client-side so it does not need to be disabled for multiplayer:[/b] requested by @cafitgoat
+[*][b]Menu music restarts after leaving a world, shuffle, and music fades:[/b] requested by @DMolRod
+[*][b]Background shuffle interval:[/b] requested by @SirMalik
+[*][b]Custom tracks starting on the main menu:[/b] requested by @Yucchi
+[*][b]Background shuffle only when leaving a world (0s):[/b] requested by @DMolRod
+[*][b]Title-screen logo picker:[/b] requested by @Kobyakoff1999, @Amiiastra, @Mijii, @meceedtogai
+[*][b]Keep our title scenes when another mod replaces the vanilla title sky:[/b] requested by Excell
+[*][b]Pan uploaded wallpapers in Edit Position:[/b] requested by hatsune.miku.con
+[*][b]Accent color palettes:[/b] requested by Remindah
+[*][b]Shuffle which backgrounds cycle (vanilla, Calamity, other mods, and uploads):[/b] requested by the milkman
+[*][b]Shuffle a random song every time the title screen opens:[/b] requested by soda
+[*][b]Eternal Garden title crash:[/b] reported by smooth, Cowboy
+[*][b]Characters not dying in-world until this theme was removed:[/b] reported by daedon.
+[/list]
+
+[h2]A note from the author[/h2]
+This is a passion project made for the love of the game.
+
+I do [b]not[/b] monetize this mod. I am not receiving any money from it, and I have no intention to. I do not claim ownership of the original song, the cover, or the credited artwork.
+
+I may have overlooked a Terraria / tModLoader Steam Workshop rule along the way. If I did, it was not for profit — it was for the soul of the project. If a rightsholder or Valve/Re-Logic/tModLoader asks for this to be taken down or changed, I will comply.

@@ -1,0 +1,181 @@
+Version 2.7.6
+
+Compatibility
+- If Calamity Entropy is enabled at the same time as this theme, a blocking prompt asks you to disable and delete one of them, as required by the rights holders
+- Choose disable and delete Calamity Entropy then reload, disable and delete this theme then reload, or exit the game. Other menu buttons stay locked until you pick, and the window returns if both mods are still on
+- Both mods are shown as they appear in the mod list, with icon, name, and Enabled
+
+Title
+- The prompt sits in the center of the real screen, and the three buttons can be clicked
+- After mods finish loading the title goes black, then a foggy Red Screen of Death (round glowing motes, deep red haze) plays with its track, then the window fades in
+- Vanilla music, uploaded playlist tracks, and any other menu audio stay off until the conflict is resolved
+
+Backgrounds
+- Calamitas uses the new painting; her crystal glow stays on the same spot and still follows mouse parallax
+- The Soul of the Universe uses the letterboxed painting as-is (bars are in the art) and fills the real screen. Cyan motes, embers, magenta sparks, bar stars, and colored bloom stay on the same lights
+- Last Meeting stays centered in the real screen instead of sliding left into a black gap
+
+Version 2.7.5
+
+Player
+- Skipping to the next or previous song no longer leaves the new track silent (reported by Pepse The Tiltless)
+- Large OGG files play again: reading length no longer parks the decoder at the end of the file, and rates above 48 kHz are resampled (reported by moying131)
+- Main Menu Music no longer loads at 0% after launch (reported by moying131)
+
+Backgrounds
+- Objects in other-mod title scenes (Deltarune Menu and similar) keep the size they were drawn at, instead of shrinking when the sky is stretched to the real screen (reported by moying131)
+- Eternal Garden keeps Wrath of the Gods' animated sky when it can. If those shaders are missing on another PC, it still loops the forest and lake instead of crashing the title (reported by Cowboy)
+- Last Meeting keeps the black bars at the top and bottom, and is no longer stretched to fill the screen
+
+Logos
+- Shuffle logos picks a random mark when the title screen starts and when you leave a world (requested by DMolRod)
+
+Version 2.7.4
+
+Crash
+- Wrath of the Gods' Eternal Garden no longer crashes the title or leaves the game unable to open until the save is cleared (reported by smooth, Cowboy)
+- Other-mod title skies are only swapped in on the menu itself, not while you are in a world, so characters can die again (reported by daedon.)
+
+Gallery
+- Each background card has a hide/show eye (tinted with the UI accent). Hidden cards move to a Hidden list and can be restored
+- Shuffle backgrounds can include our scenes, vanilla, Calamity, other-mod, and uploaded wallpapers. Checkboxes appear only while Shuffle backgrounds is selected, to the left of the eye (requested by the milkman)
+- Clicking a background leaves Shuffle backgrounds, so that card is no longer stuck selected
+- Calamity biome cards and Wrath of the Gods / Calamity Style themes show that theme's logo or sky art instead of repeating the same mod icon
+- Hide/show, shuffle pool, layout, accent, uploads, and volume stay saved across restarts and reloads
+
+Backgrounds
+- Uploaded wallpapers (and our own scenes) stretch to the real screen, including ultrawide 21:9, instead of leaving vanilla sky on the right and bottom
+- Other-mod title skies that drew at a fixed size (Calamity Style Classic and similar) now cover the real screen, including ultrawide
+- Last meeting, Yharim Never Die, and Witch of Supreme Memories fill the real screen
+- Come Along with Me hands sit on the bottom edge of the screen
+- Eternal Garden draws with Wrath of the Gods' own sky when it can, without using the crash path
+- Piss Sea, Astral Snow, and Astral Desert are removed from the picker
+- With song shuffle enabled, a random track plays every time the title screen starts, not only after leaving a world (requested by soda)
+
+Volume
+- Main Menu Music sits under the vanilla sliders, drawn in the same pass so the cursor stays on top (requested by @TheRubick09)
+
+Version 2.7
+
+Title sky
+- If another mod replaces the vanilla title background, this theme still draws on top of it. You do not have to hunt through 100 mods to get our scenes back (requested by Excell)
+- When that happens, the background gallery names the mod whose title sky is being covered
+
+Custom wallpapers
+- Uploaded backgrounds can be panned in Edit Position instead of staying locked to the center crop: drag empty space, then Save (requested by hatsune.miku.con)
+- Pan is stored per image and restored with the rest of the layout
+
+Vanilla and other-mod skies
+- The background gallery includes Terraria's default title sky (Forest); the card uses the tModLoader logo
+- Other enabled menu themes can be picked as backgrounds while this theme stays selected; those cards use the mod's icon
+- Extra title skies registered as background styles, and not already tied to another menu, show up the same way
+- Wrath of the Gods themes (Paradise's Shining Backdrop, The Insouciant Carmine Yonder, Eternal Garden, Turbulent Expanse, ascent) now appear in the gallery and actually draw
+
+Logos
+- Wrath of the Gods' Nameless Deity / "You have Passed the test" logo can be chosen without applying that theme's sky behind it
+
+Gallery
+- Scrolling the background (and logo) picker no longer lets cards draw over the title bar or the close button
+- Accent color swatches (bottom-right of the galleries) retint the player, galleries, hover, menu buttons, and UI icons — darker while idle, lighter on hover (requested by Remindah)
+
+Crash
+- Fixed a title-screen crash when the shuffle-interval label tried to format "Change every {0}s" with no number
+- Fixed a title-screen crash while drawing the background: looking up which mod owned the current sky could enumerate styles as another mod changed that list
+- Fixed a reload / disable crash that disposed graphics resources off the main thread
+
+Version 2.5.1
+
+Galleries
+- Background (and logo) galleries can be scrolled with the mouse wheel when there are too many custom uploads to fit on screen, with a scrollbar on the right (requested by T༃눈陌霖☬星海눈༃T)
+
+Cooler Menu
+- With Sam's Cooler Menu Screen active, title buttons use the same fading red hover as the regular menu instead of vanilla yellow (requested by @MPyre)
+
+Version 2.5
+
+Other-mod logos
+- Empty, 1×1, fully transparent, and placeholder logos from other enabled mods are skipped so they no longer show up as blank cards
+- Full-screen title images that some mods register as a "logo" are treated as backgrounds instead of a second mark
+- Picking another mod's logo draws that mark at our position and scale, including hover / float, glow, and other logo-only effects (Entropy's bobbing logo, and similar)
+- Choosing a logo no longer pulls that mod's whole title scene in behind it
+
+Other-mod backgrounds
+- Picking another mod's background draws their title scene, not vanilla Terraria sky
+- That scene no longer also stamps their logo on top of whatever logo you already picked
+- Themes like Calamity that paint the sky inside the logo hook still work as a background while this theme stays selected
+
+Edit Position
+- Save sits bottom-left, just to the right of the Edit button, so it no longer overlaps Switch Menu Theme
+
+Version 2.4
+
+Edit Position
+- New bottom-left button opens Edit Position: drag the logo, the music player, and the main-menu button column
+- Save (bottom-right) writes logo position, player position, menu position, and logo scale
+- Toggling Edit Position again cancels without saving
+- While editing, the screen dims, red guides show what you can grab, and gallery / logo / social chrome tucks away so it does not eat clicks
+- Save sits above "Switch Menu Theme" and the swap is blocked on the save click, so you no longer get thrown onto the default Terraria menu
+
+Menu buttons
+- The left-side vanilla list (Singleplayer, Multiplayer, and the rest) moves on both X and Y
+- The red hitbox follows the drawn text instead of sitting under the first items and covering the player
+- Hover and click still work after you move the list, including after Save
+
+Music player
+- In Edit Position the collapsed pause orb can be dragged freely
+- Grabbing the player no longer drags the button list
+- Outside edit mode it still expands on hover, seeks, loops, shuffles, and opens the playlist / upload flow
+
+Logo
+- Five built-in logos: Classic, Gothic, Rings, Hands, Sticker
+- Hands keep the floating extra layer; Sticker keeps the watermelon-smile head on the cat-head mark
+- Sticker head is sized to fill that silhouette so the outline reads, without swallowing TERRARIA
+- In Edit Position, hover the whole logo and scroll to resize it (about 45%–200%); a label under the box shows the percent
+- Scale is saved with the layout and applies to built-in, custom, and other-mod logos
+
+Custom uploads (PNG / JPG / JPEG)
+- Background gallery and logo gallery each have an Upload card
+- Files are copied to Documents/My Games/Terraria/tModLoader/DieWithASmile/logo and .../wallpaper (same root as custom music)
+- Cards show a live preview of the image
+- Custom picks are stored in settings.json and come back after restart / reload
+- Delete from the same gallery: Delete, then Sure? (same two-click confirm as custom songs)
+- Files dropped into those folders also show up the next time the gallery scans
+
+Other mods
+- Enabled mods that add a menu theme with their own logo or background style show up as extra cards in our pickers
+- Calamity (and similar themes) can be chosen for background, logo, or both while this theme stays selected
+- Backgrounds call that mod's PreDrawCloseBackground; logos call PreDrawLogo / PostDrawLogo so particles and other menu effects still run when the other mod supports it
+- If you disable the other mod, those cards vanish and the saved choice is cleared instead of breaking the title screen
+
+Background gallery
+- Follow music, lock a scene, or shuffle
+- Shuffle interval 0–15 seconds; 0 only changes when you leave a world
+- Scenes: Calamitas, Don't Forget, Come Along with Me, Last meeting, Yharim Never Die, Witch of Supreme Memories, The Soul of the Universe
+- Hide / show the music player from the same panel
+
+Persistence and polish
+- Selected theme, playlist, uploads, loop, shuffle, background, logo, custom art, other-mod art, volume, and layout (positions + logo scale) are remembered
+- Linear filtering on logos, custom images, and full-screen wallpapers
+- Menu music still has its own slider under Settings → Volume
+- Compatible with Sam's Cooler Menu Screen (player still collapses to a circle until hovered)
+
+Version 2.3
+
+- Shuffle backgrounds can be set to 0 seconds so they stay put and only change when you leave a world (requested by @DMolRod)
+- Pick a title-screen logo from a new gallery button under the background picker (requested by @Kobyakoff1999, @Amiiastra, @Mijii, @meceedtogai)
+
+Version 2.2
+
+- Shuffle backgrounds in the gallery can now change every 5–15 seconds via a new slider (requested by @SirMalik)
+- Shuffle on the music player now picks a random enabled track when you leave a world, not only after pressing Next (requested by @DMolRod)
+- Custom tracks start on the main menu again without needing to skip, including after leaving a world (requested by @Yucchi, @DMolRod)
+- The shuffle button uses a proper shuffle icon
+
+Version 2.1 has been published to Stable tModLoader v2026.6
+
+- Drag the music player by its empty space; the collapsed circle follows, and the position is saved after leaving a world, restarting, or reloading the mod
+- Shuffle enabled tracks from the player; returning to the menu can pick a random song (requested by @DMolRod)
+- Shuffle backgrounds in the gallery so every scene can show up (requested by @DMolRod)
+- Smoother music fade-in / fade-out while mods load, when entering a world, and when returning to the menu (requested by @DMolRod)
+- With Sam's Cooler Menu Screen, the player collapses to a circle until hovered, like the standard menu (requested by @Mihail04)
+- Background credits now include @momodzmz and @Neshumi for art fitting and refinements

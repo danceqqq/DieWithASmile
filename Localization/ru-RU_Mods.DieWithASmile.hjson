@@ -1,0 +1,79 @@
+DisplayName: Тема меню The End Of A Calamity
+
+UI: {
+	MainMenuMusic: Музыка главного меню
+	MenuBackground: Фон меню
+	MenuBackgrounds: Фоны меню
+	FollowMusic: Следовать за музыкой
+	ShuffleBackgrounds: Случайные фоны
+	ShuffleLogos: Случайный логотип
+	HideMusicPlayer: Скрыть плеер
+	ShowMusicPlayer: Показать плеер
+	ShuffleEvery: Смена каждые {0} с
+	ShuffleOnLeave: Только при выходе из мира
+	ShufflePickHint: Поставьте галочки, какие фоны крутить
+	HiddenBackgrounds: Скрытые фоны
+	ShowHiddenBackgrounds: Скрытые
+	ShowVisibleBackgrounds: Видимые
+	MenuLogo: Логотип меню
+	MenuLogos: Логотипы меню
+	EditPosition: Редактировать положение
+	SaveLayout: Сохранить
+	ScrollToResize: Колёсико — размер
+	DragToPan: Перетащите пустое место, чтобы сдвинуть фон
+	SkyCoveredBy: Перекрываем небо главного меню из {0}
+	TmlBackground: tModLoader
+	VanillaBackground: Ваниль
+	AccentCrimson: Алый
+	AccentPurple: Фиолетовый
+	AccentRose: Розовый
+	AccentGold: Золото
+	AccentTeal: Бирюза
+	AccentIce: Лёд
+	AccentEmber: Янтарь
+	AccentMint: Мята
+	UploadLogo: Загрузить логотип
+	UploadBackground: Загрузить фон
+	LogoClassic: Классика
+	LogoGothic: Готика
+	LogoOrbit: Кольца
+	LogoHands: Руки
+	LogoSticker: Стикер
+	SceneCalamitas: Calamitas
+	SceneDontForget: Don't Forget
+	SceneComeAlong: Come Along with Me
+	SceneMeadow: Last meeting
+	SceneYharim: Yharim Never Die
+	SceneWitch: Witch of Supreme Memories
+	SceneSoul: The Soul of the Universe
+	VanillaForest: Лес
+	VanillaCorruption: Искажение
+	VanillaCrimson: Багрянец
+	VanillaHallow: Освящение
+	VanillaJungle: Джунгли
+	VanillaSnow: Снега
+	VanillaDesert: Пустыня
+	VanillaOcean: Океан
+	VanillaMushroom: Грибной биом
+	Playlist: Плейлист
+	UploadingSong: Загрузка песни
+	Cancel: Отмена
+	Close: Закрыть
+	Rename: Имя
+	Done: Готово
+	Delete: Удалить
+	Sure: Точно?
+	OpenMusicFolder: Открыть папку музыки
+	ClickBrokenFolder: Нажмите, чтобы открыть папку Broken
+	RenameHint: Смена имени сохраняет исполнителя. Непроигрываемые треки попадают в папку Broken.
+	ClickRenameArtist: Нажмите, чтобы переименовать исполнителя
+	ArtistPlaceholder: Имя исполнителя...
+	ConflictTitle: Calamity Entropy должен быть отключён
+	ConflictBody: Мод Calamity Entropy должен быть отключён для работы The End Of A Calamity Menu Theme — по требованиям правообладателей. Другие кнопки меню заблокированы, пока конфликт не будет решён. Если оба мода снова окажутся включены вместе, это окно появится снова.
+	ConflictOurName: The End Of A Calamity Menu Theme
+	ConflictEnabled: Включён
+	ConflictRemoveEntropy: Отключить и удалить Calamity Entropy, затем перезагрузить
+	ConflictRemoveUs: Отключить и удалить The End Of A Calamity Menu Theme, затем перезагрузить
+	ConflictExit: Выйти из игры
+	ConflictWorking: Подождите…
+}

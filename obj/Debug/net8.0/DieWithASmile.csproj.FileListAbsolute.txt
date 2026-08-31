@@ -1,0 +1,15 @@
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\DieWithASmile.deps.json
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\DieWithASmile.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\DieWithASmile.pdb
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.csproj.AssemblyReference.cache
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.AssemblyInfoInputs.cache
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.AssemblyInfo.cs
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.csproj.CoreCompileInputs.cache
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\refint\DieWithASmile.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.pdb
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\ref\DieWithASmile.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\NLayer.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\OggVorbisEncoder.dll
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithA.D465C39A.Up2Date

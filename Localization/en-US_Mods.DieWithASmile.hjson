@@ -1,0 +1,79 @@
+DisplayName: The End Of A Calamity Menu Theme
+
+UI: {
+	MainMenuMusic: Main Menu Music
+	MenuBackground: Menu background
+	MenuBackgrounds: Menu backgrounds
+	FollowMusic: Follow music
+	ShuffleBackgrounds: Shuffle backgrounds
+	ShuffleLogos: Shuffle logos
+	HideMusicPlayer: Hide music player
+	ShowMusicPlayer: Show music player
+	ShuffleEvery: Change every {0}s
+	ShuffleOnLeave: Only when leaving a world
+	ShufflePickHint: Check boxes to choose which backgrounds shuffle
+	HiddenBackgrounds: Hidden backgrounds
+	ShowHiddenBackgrounds: Hidden
+	ShowVisibleBackgrounds: Visible
+	MenuLogo: Menu logo
+	MenuLogos: Menu logos
+	EditPosition: Edit position
+	SaveLayout: Save
+	ScrollToResize: Scroll to resize
+	DragToPan: Drag empty space to pan the background
+	SkyCoveredBy: Covering title sky from {0}
+	TmlBackground: tModLoader
+	VanillaBackground: Vanilla
+	AccentCrimson: Crimson
+	AccentPurple: Purple
+	AccentRose: Rose
+	AccentGold: Gold
+	AccentTeal: Teal
+	AccentIce: Ice
+	AccentEmber: Ember
+	AccentMint: Mint
+	UploadLogo: Upload logo
+	UploadBackground: Upload background
+	LogoClassic: Classic
+	LogoGothic: Gothic
+	LogoOrbit: Rings
+	LogoHands: Hands
+	LogoSticker: Sticker
+	SceneCalamitas: Calamitas
+	SceneDontForget: Don't Forget
+	SceneComeAlong: Come Along with Me
+	SceneMeadow: Last meeting
+	SceneYharim: Yharim Never Die
+	SceneWitch: Witch of Supreme Memories
+	SceneSoul: The Soul of the Universe
+	VanillaForest: Forest
+	VanillaCorruption: Corruption
+	VanillaCrimson: Crimson
+	VanillaHallow: Hallow
+	VanillaJungle: Jungle
+	VanillaSnow: Snow
+	VanillaDesert: Desert
+	VanillaOcean: Ocean
+	VanillaMushroom: Glowing Mushroom
+	Playlist: Playlist
+	UploadingSong: Uploading song
+	Cancel: Cancel
+	Close: Close
+	Rename: Rename
+	Done: Done
+	Delete: Delete
+	Sure: Sure?
+	OpenMusicFolder: Open music folder
+	ClickBrokenFolder: Click to open the Broken folder
+	RenameHint: Rename saves the artist. Unplayable songs go to the Broken folder.
+	ClickRenameArtist: Click to rename artist
+	ArtistPlaceholder: Artist name...
+	ConflictTitle: Calamity Entropy must be disabled
+	ConflictBody: Calamity Entropy has to be turned off for The End Of A Calamity Menu Theme to work, as required by the rights holders. Other menu buttons are locked until this is resolved. If both mods are still enabled together, this window will appear again.
+	ConflictOurName: The End Of A Calamity Menu Theme
+	ConflictEnabled: Enabled
+	ConflictRemoveEntropy: Disable and delete Calamity Entropy, then reload
+	ConflictRemoveUs: Disable and delete The End Of A Calamity Menu Theme, then reload
+	ConflictExit: Exit game
+	ConflictWorking: Working…
+}
