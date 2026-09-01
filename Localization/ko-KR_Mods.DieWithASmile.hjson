@@ -76,4 +76,8 @@ UI: {
 	ConflictRemoveUs: The End Of A Calamity Menu Theme를 끄고 삭제한 뒤 다시 로드
 	ConflictExit: 게임 종료
 	ConflictWorking: 처리 중…
+	WePromoNew: NEW
+	WePromoTitle: Wallpaper Engine
+	WePromoBody: 제한 없는 새 모드, 확장 기능 포함 — 배경, 음악, 로고, 위젯.
+	WePromoButton: 창작마당
 }

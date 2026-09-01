@@ -5,6 +5,9 @@ Player
 - The playlist no longer starts while mods are loading and then starts again when loading finishes (reported by DMolRod)
 - Other-mod title skies (Catalyst and similar) no longer mute the playlist after load when shuffle is on (reported by DMolRod)
 
+Workshop
+- If Wallpaper Engine is not already installed, the Workshop Hub description strip shows a promo card with a workshop link
+
 Backgrounds
 - Shuffle set to "only when leaving a world" still picks a new scene after a very short visit, not only if you stay in the world for a while (reported by DMolRod)
 - Last Meeting fills the screen width; the letterbox paint no longer slides off the art (reported by DMolRod)

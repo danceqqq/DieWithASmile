@@ -76,4 +76,8 @@ UI: {
 	ConflictRemoveUs: Disable and delete The End Of A Calamity Menu Theme, then reload
 	ConflictExit: Exit game
 	ConflictWorking: Working…
+	WePromoNew: NEW
+	WePromoTitle: Wallpaper Engine
+	WePromoBody: New mod, no limits — extra features for wallpapers, music, logos, and widgets.
+	WePromoButton: Workshop
 }
