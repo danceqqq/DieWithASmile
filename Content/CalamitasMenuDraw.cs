@@ -68,20 +68,14 @@ namespace DieWithASmile.Content
 		internal static Rectangle FitScreenDestination(Texture2D tex, float parallaxDepth = 0f)
 		{
 			Point cover = CoverSize;
-			float scale = Math.Min(
-				cover.X / (float)Math.Max(1, tex.Width),
-				cover.Y / (float)Math.Max(1, tex.Height));
+			float scale = cover.X / (float)Math.Max(1, tex.Width);
 			Vector2 shift = Math.Abs(parallaxDepth) > 0.0001f ? CalamitasMenuParallax.ForDepth(parallaxDepth) : Vector2.Zero;
-			int w = Math.Max(1, (int)(tex.Width * scale));
+			int w = cover.X;
 			int h = Math.Max(1, (int)(tex.Height * scale));
-			int minX = Math.Min(0, cover.X - w);
-			int maxX = Math.Max(0, cover.X - w);
 			int minY = Math.Min(0, cover.Y - h);
 			int maxY = Math.Max(0, cover.Y - h);
-			float xShift = w >= cover.X - 1 ? 0f : shift.X;
-			int x = (int)Math.Clamp((cover.X - w) * 0.5f + xShift, minX, maxX);
 			int y = (int)Math.Clamp((cover.Y - h) * 0.5f + shift.Y, minY, maxY);
-			return new Rectangle(x, y, w, h);
+			return new Rectangle(0, y, w, h);
 		}
 
 		internal static void BeginUi(SpriteBatch spriteBatch, Matrix? matrix = null)

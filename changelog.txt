@@ -1,4 +1,17 @@
+Version 2.7.7
+
+Player
+- Menu music fades out when you enter a world, and fades back in on the title, instead of cutting off (reported by DMolRod)
+- The playlist no longer starts while mods are loading and then starts again when loading finishes (reported by DMolRod)
+- Other-mod title skies (Catalyst and similar) no longer mute the playlist after load when shuffle is on (reported by DMolRod)
+
+Backgrounds
+- Shuffle set to "only when leaving a world" still picks a new scene after a very short visit, not only if you stay in the world for a while (reported by DMolRod)
+- Last Meeting fills the screen width; the letterbox paint no longer slides off the art (reported by DMolRod)
+- The Soul of the Universe uses the new painting, stretched across the real screen with mouse parallax, cyan motes, embers, magenta sparks, bar stars, and bloom on the marked lights
+
 Version 2.7.6
+
 
 Compatibility
 - If Calamity Entropy is enabled at the same time as this theme, a blocking prompt asks you to disable and delete one of them, as required by the rights holders

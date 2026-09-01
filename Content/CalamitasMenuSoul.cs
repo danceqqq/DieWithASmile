@@ -127,8 +127,8 @@ namespace DieWithASmile.Content
 		private static Rectangle FillScreen()
 		{
 			Point cover = CalamitasMenuDraw.CoverSize;
-			Vector2 shift = CalamitasMenuParallax.ForDepth(0.12f);
-			const float over = 1.04f;
+			Vector2 shift = CalamitasMenuParallax.ForDepth(0.18f);
+			const float over = 1.08f;
 			int w = Math.Max(1, (int)(cover.X * over));
 			int h = Math.Max(1, (int)(cover.Y * over));
 			return new Rectangle(

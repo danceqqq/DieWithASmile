@@ -31,6 +31,8 @@ namespace DieWithASmile.Content
 				MonoModHooks.Add(activateOld, ActivateOldHook);
 		}
 
+		public override void OnWorldUnload() => CalamitasMenuPlaylist.MarkLeftTitle();
+
 		public override void PostSetupContent()
 		{
 			BootstrapFromTml();

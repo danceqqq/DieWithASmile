@@ -186,7 +186,14 @@ namespace DieWithASmile.Content
 				PushCurrentForWallpaper();
 			else
 				PopAll();
-			orig(self, ref gameTime);
+			try {
+				orig(self, ref gameTime);
+			}
+			finally {
+				PopAll();
+				if (Main.gameMenu && MenuLoader.CurrentMenu is DieWithASmileCalamitasMenu)
+					CalamitasMenuPlaylist.AssertTitleMusic();
+			}
 		}
 
 		private static void DoDrawHook(On_Main.orig_DoDraw orig, Main self, GameTime gameTime)

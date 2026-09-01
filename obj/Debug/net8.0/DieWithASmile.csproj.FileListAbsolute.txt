@@ -13,3 +13,4 @@ C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmil
 C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\NLayer.dll
 C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\bin\Debug\net8.0\OggVorbisEncoder.dll
 C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithA.D465C39A.Up2Date
+C:\Users\myangell\Documents\My Games\Terraria\tModLoader\ModSources\DieWithASmile\obj\Debug\net8.0\DieWithASmile.sourcelink.json

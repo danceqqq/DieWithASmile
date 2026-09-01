@@ -154,9 +154,6 @@ namespace DieWithASmile.Content
 			Color mid = Darken(edge, 0.28f);
 			Color near = Darken(edge, 0.46f);
 			float time = Main.GlobalTimeWrappedHourly;
-			Vector2 parallax = CalamitasMenuParallax.ForDepth(0.55f);
-			region.X += (int)parallax.X;
-
 			const int bands = 56;
 			for (int i = 0; i < bands; i++) {
 				float t = i / (float)(bands - 1);

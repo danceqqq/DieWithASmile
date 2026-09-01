@@ -85,6 +85,7 @@ namespace DieWithASmile.Content
 		private static bool _playerWasEnabled = true;
 		private static bool _pendingStart;
 		private static bool _returnFromWorld;
+		private static bool _visitedWorld;
 		private static bool _menuAudioStarted;
 		private static int _customRetryDelay;
 		private static float _mix;
@@ -108,8 +109,8 @@ namespace DieWithASmile.Content
 		{
 			get
 			{
-				if (CalamitasMenuPersist.MenuStillLoading)
-					return Main.curMusic > 0 ? Main.curMusic : 50;
+				if (!Main.gameMenu || CalamitasMenuPersist.MenuStillLoading || !_menuAudioStarted)
+					return 0;
 
 				if (!DieWithASmileSettings.PlayerEnabled || _paused || Current.IsCustom)
 					return 0;
@@ -328,19 +329,10 @@ namespace DieWithASmile.Content
 				return;
 			}
 
-			if (CalamitasMenuPersist.MenuStillLoading) {
-				_pendingStart = true;
-				return;
-			}
-
 			if (_menuAudioStarted)
 				return;
 
-			bool fromWorld = _returnFromWorld;
-			StartMenuPlayback(fromWorld);
-			_returnFromWorld = false;
-			_pendingStart = false;
-			_menuAudioStarted = true;
+			_pendingStart = true;
 		}
 
 		internal static void ApplyPlayerEnabled(bool enabled)
@@ -394,6 +386,12 @@ namespace DieWithASmile.Content
 			}
 		}
 
+		internal static void MarkLeftTitle()
+		{
+			_returnFromWorld = true;
+			_visitedWorld = true;
+		}
+
 		internal static void HandleMenuLifecycle()
 		{
 			if (CalamitasMenuConflict.OverlayActive) {
@@ -408,11 +406,11 @@ namespace DieWithASmile.Content
 			}
 
 			if (!Main.gameMenu) {
+				MarkLeftTitle();
 				if (_lifeFrame != Main.GameUpdateCount) {
 					_lifeFrame = Main.GameUpdateCount;
 					_pendingStart = false;
-					_menuAudioStarted = false;
-					TickMix(0f, 0.01f);
+					TickMix(0f, 0.018f);
 					if (Current.IsCustom) {
 						CalamitasMenuCustomAudio.Update();
 						if (_mix <= 0.001f)
@@ -425,7 +423,6 @@ namespace DieWithASmile.Content
 					}
 				}
 
-				_returnFromWorld = true;
 				return;
 			}
 
@@ -434,11 +431,17 @@ namespace DieWithASmile.Content
 				return;
 			}
 
-			if (!_menuAudioStarted && DieWithASmileSettings.PlayerEnabled && (_returnFromWorld || _pendingStart)) {
-				bool fromWorld = _returnFromWorld;
+			bool fromWorld = _visitedWorld || _returnFromWorld;
+			if (fromWorld) {
+				_visitedWorld = false;
 				_returnFromWorld = false;
 				_pendingStart = false;
-				StartMenuPlayback(fromWorld);
+				ReturnToTitle(fromWorld: true);
+				_menuAudioStarted = DieWithASmileSettings.PlayerEnabled;
+			}
+			else if (!_menuAudioStarted && DieWithASmileSettings.PlayerEnabled && _pendingStart) {
+				_pendingStart = false;
+				ReturnToTitle(fromWorld: false);
 				_menuAudioStarted = true;
 			}
 
@@ -446,12 +449,27 @@ namespace DieWithASmile.Content
 				return;
 
 			_lifeFrame = Main.GameUpdateCount;
-			if (DieWithASmileSettings.PlayerEnabled && Current.IsCustom && !_paused)
+			if (!DieWithASmileSettings.PlayerEnabled || _paused)
+				return;
+
+			TickMix(1f, 0.012f);
+			AssertTitleMusic();
+			if (Current.IsCustom)
 				CalamitasMenuCustomAudio.Update();
 		}
 
-		private static void StartMenuPlayback(bool fromWorld)
+		private static void ReturnToTitle(bool fromWorld)
 		{
+			if (!DieWithASmileSettings.PlayerEnabled) {
+				Silence();
+				return;
+			}
+
+			if (DieWithASmileSettings.ShuffleLogos)
+				CalamitasMenuLogo.Reroll(save: true);
+			if (fromWorld && DieWithASmileSettings.ShuffleScenes)
+				DieWithASmileSettings.RerollScene();
+
 			int index = _index;
 			if (_loop) {
 				int looped = _active.FindIndex(track => track.Id == _loopedId);
@@ -461,12 +479,73 @@ namespace DieWithASmile.Content
 			else if (_shuffle && !_loop)
 				index = RandomIndex(_index);
 
-			string previousId = Current.Id;
-			PlayIndex(index, fromThemeStart: true, blend: true);
-			if (DieWithASmileSettings.ShuffleLogos)
-				CalamitasMenuLogo.Reroll(save: true);
-			if (fromWorld && DieWithASmileSettings.ShuffleScenes && Current.Id == previousId)
-				DieWithASmileSettings.RerollScene();
+			bool sameTrack = _active.Count > 0
+				&& index == _index
+				&& Current.Id == _active[Math.Clamp(index, 0, _active.Count - 1)].Id;
+			if (fromWorld && sameTrack)
+				EnsurePlaying(blend: true);
+			else
+				PlayIndex(index, fromThemeStart: true, blend: true);
+		}
+
+		internal static void AssertTitleMusic()
+		{
+			if (!Main.gameMenu || CalamitasMenuPersist.MenuStillLoading || !_menuAudioStarted)
+				return;
+			if (!DieWithASmileSettings.PlayerEnabled || _paused)
+				return;
+
+			if (Current.IsCustom) {
+				Main.newMusic = 0;
+				return;
+			}
+
+			int slot = CurrentSlot;
+			if (slot <= 0)
+				return;
+
+			Main.newMusic = slot;
+			if (slot >= Main.musicFade.Length)
+				return;
+
+			Main.musicNoCrossFade[slot] = false;
+			float want = OutputMix * DieWithASmileSettings.MenuMusicVolume;
+			if (Main.musicFade[slot] < want)
+				Main.musicFade[slot] = Math.Min(want, Main.musicFade[slot] + 0.02f);
+		}
+
+		private static void EnsurePlaying(bool blend)
+		{
+			_paused = false;
+			if (blend)
+				_mix = Math.Min(_mix, 0.02f);
+			try {
+				if (Current.IsCustom) {
+					Main.newMusic = 0;
+					if (!CalamitasMenuCustomAudio.IsPlaying)
+						TryPlayCustom(Current);
+					return;
+				}
+
+				int slot = CurrentSlot;
+				if (slot <= 0)
+					return;
+
+				Main.newMusic = slot;
+				Main.musicNoCrossFade[slot] = false;
+				Main.musicFade[slot] = OutputMix * DieWithASmileSettings.MenuMusicVolume;
+				IAudioTrack track = GetTrack();
+				if (track == null)
+					return;
+				if (track.IsPaused)
+					track.Resume();
+				else if (track.IsStopped) {
+					track.Reuse();
+					track.Play();
+				}
+			}
+			catch {
+			}
 		}
 
 		internal static void Update()
@@ -742,14 +821,19 @@ namespace DieWithASmile.Content
 		private static void PlayIndex(int index, bool fromThemeStart, bool blend)
 		{
 			string previousId = Current?.Id;
-			try {
-				if (!Current.IsCustom)
-					GetTrack()?.Stop(AudioStopOptions.Immediate);
-			}
-			catch {
-			}
+			if (!blend) {
+				try {
+					if (!Current.IsCustom)
+						GetTrack()?.Stop(AudioStopOptions.Immediate);
+				}
+				catch {
+				}
 
-			CalamitasMenuCustomAudio.Stop();
+				CalamitasMenuCustomAudio.Stop();
+			}
+			else if (Current.IsCustom) {
+				CalamitasMenuCustomAudio.Stop();
+			}
 
 			if (_active.Count == 0)
 				Rebuild(play: false);
@@ -759,13 +843,14 @@ namespace DieWithASmile.Content
 				_cachedDuration = 0f;
 			_paused = false;
 			_customRetryDelay = 0;
-			_mix = blend && !Current.IsCustom ? 0f : 1f;
+			_mix = blend ? 0f : 1f;
 
 			try {
 				if (Current.IsCustom) {
 					Main.musicBox2 = -1;
 					Main.newMusic = 0;
-					MuteVanillaMusic();
+					if (!blend)
+						MuteVanillaMusic();
 					DisposeCustom();
 					DieWithASmileSave.WritePlayGuard(Current.FileName);
 					bool played = TryPlayCustom(Current);
