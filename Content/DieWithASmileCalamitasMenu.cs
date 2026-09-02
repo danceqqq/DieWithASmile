@@ -91,14 +91,20 @@ namespace DieWithASmile.Content
 				return;
 
 			_ticked = true;
-			CalamitasMenuForeign.BeginFrame();
 			CalamitasMenuPlaylist.HandleMenuLifecycle();
-			DieWithASmileSettings.TickScenes();
+			if (!CoolerMenuCompat.MenuBackdropActive)
+				return;
+
+			CalamitasMenuForeign.BeginFrame();
 			if (DieWithASmileSettings.UsingVanillaWallpaper)
 				Main.bgStyle = DieWithASmileSave.Data.VanillaBgStyle;
 			CalamitasMenuBackgroundStyle.DrewThisFrame = false;
 			CalamitasMenuBackgroundStyle.UpdateFade();
 			CalamitasMenuSpectrum.Update(Mod);
+			if (!CoolerMenuCompat.OnTitleLike)
+				return;
+
+			DieWithASmileSettings.TickScenes();
 			CalamitasMenuLayout.Update();
 			CalamitasMenuPanels.Update();
 			CalamitasMenuPlayerUI.HandleTitleInput();
@@ -115,12 +121,20 @@ namespace DieWithASmile.Content
 			Color drawColor)
 		{
 			Tick();
+			if (!CoolerMenuCompat.MenuBackdropActive) {
+				_ticked = false;
+				return;
+			}
+
 			if (!CalamitasMenuBackgroundStyle.DrewThisFrame)
 				CalamitasMenuBackgroundStyle.Draw(spriteBatch);
 
 			CalamitasMenuLogo.Draw(spriteBatch, CalamitasMenuBackgroundStyle.FadeAlpha);
-			CalamitasMenuPlayerUI.Draw(spriteBatch, CalamitasMenuBackgroundStyle.FadeAlpha);
-			CalamitasMenuPanels.Draw(spriteBatch, CalamitasMenuBackgroundStyle.FadeAlpha);
+			if (CoolerMenuCompat.OnTitleLike) {
+				CalamitasMenuPlayerUI.Draw(spriteBatch, CalamitasMenuBackgroundStyle.FadeAlpha);
+				CalamitasMenuPanels.Draw(spriteBatch, CalamitasMenuBackgroundStyle.FadeAlpha);
+			}
+
 			CalamitasMenuPanels.EndFrame();
 			CalamitasMenuLogo.EndFrame();
 			CalamitasMenuLayout.EndFrame();
@@ -136,6 +150,9 @@ namespace DieWithASmile.Content
 			ref Color drawColor)
 		{
 			Tick();
+			if (!CoolerMenuCompat.MenuBackdropActive)
+				return false;
+
 			CalamitasMenuBackgroundStyle.Draw(spriteBatch);
 			return false;
 		}

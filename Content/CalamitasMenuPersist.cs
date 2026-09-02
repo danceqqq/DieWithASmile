@@ -51,6 +51,8 @@ namespace DieWithASmile.Content
 				DieWithASmileSettings.TickScenes();
 			if (!Main.gameMenu)
 				return;
+			if (CoolerMenuCompat.WorldGenUiActive)
+				return;
 
 			if (Main.instance.playOldTile && DieWithASmileSave.Data.KeepMenuSelected) {
 				Main.instance.playOldTile = false;
@@ -125,6 +127,8 @@ namespace DieWithASmile.Content
 		private static void Restore()
 		{
 			if (!DieWithASmileSave.Data.KeepMenuSelected)
+				return;
+			if (CoolerMenuCompat.WorldGenUiActive)
 				return;
 
 			DieWithASmileCalamitasMenu menu = ModContent.GetInstance<DieWithASmileCalamitasMenu>();

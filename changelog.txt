@@ -1,4 +1,15 @@
+Version 2.7.8
+
+Title
+- The menu theme stays on Achievements, Multiplayer, character select, Workshop, and other menu screens, not only the main title
+
+Compatibility
+- WorldGen Previewer still gets a clear generation screen: extra title chrome stays off while a world is generating (reported by Angel_Enriq)
+
 Version 2.7.7
+
+Compatibility
+- Title player, logos, wallpaper swaps, and scene shuffle stay off while a world is generating, so WorldGen Previewer and the vanilla progress screen keep their own UI (reported by Angel_Enriq)
 
 Player
 - Menu music fades out when you enter a world, and fades back in on the title, instead of cutting off (reported by DMolRod)

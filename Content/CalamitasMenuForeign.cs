@@ -137,7 +137,7 @@ namespace DieWithASmile.Content
 
 		internal static void PushCurrentForWallpaper()
 		{
-			if (!Main.gameMenu || _currentMenu == null)
+			if (!Main.gameMenu || !CoolerMenuCompat.MenuBackdropActive || _currentMenu == null)
 				return;
 
 			ModMenu target = null;
@@ -180,7 +180,7 @@ namespace DieWithASmile.Content
 
 		private static void DoUpdateHook(On_Main.orig_DoUpdate orig, Main self, ref GameTime gameTime)
 		{
-			if (!Main.gameMenu)
+			if (!Main.gameMenu || !CoolerMenuCompat.MenuBackdropActive)
 				PopAll();
 			else if (!CalamitasMenuConflict.Blocking)
 				PushCurrentForWallpaper();
@@ -198,7 +198,7 @@ namespace DieWithASmile.Content
 
 		private static void DoDrawHook(On_Main.orig_DoDraw orig, Main self, GameTime gameTime)
 		{
-			if (Main.gameMenu && !CalamitasMenuConflict.Blocking)
+			if (Main.gameMenu && CoolerMenuCompat.MenuBackdropActive && !CalamitasMenuConflict.Blocking)
 				PushCurrentForWallpaper();
 			try {
 				orig(self, gameTime);

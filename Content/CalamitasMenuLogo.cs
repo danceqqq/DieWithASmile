@@ -181,7 +181,7 @@ namespace DieWithASmile.Content
 
 		internal static void Draw(SpriteBatch spriteBatch, float fade)
 		{
-			if (fade <= 0f)
+			if (fade <= 0f || !CoolerMenuCompat.MenuBackdropActive)
 				return;
 
 			if (DieWithASmileSettings.UsingForeignLogo) {

@@ -24,7 +24,7 @@ namespace DieWithASmile.Content
 
 		public override void ChooseSurfaceBackgroundStyle(ref int style)
 		{
-			if (!Main.gameMenu || MenuLoader.CurrentMenu is not DieWithASmileCalamitasMenu)
+			if (!Main.gameMenu || !CoolerMenuCompat.MenuBackdropActive || MenuLoader.CurrentMenu is not DieWithASmileCalamitasMenu)
 				return;
 
 			if (DieWithASmileSettings.UsingVanillaWallpaper) {

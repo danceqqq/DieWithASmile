@@ -383,7 +383,7 @@ namespace DieWithASmile.Content
 
 		internal static void TickScenes()
 		{
-			if (!Main.gameMenu || !TimerShuffleScenes) {
+			if (!Main.gameMenu || !TimerShuffleScenes || !CoolerMenuCompat.OnTitleLike) {
 				_sceneTimer = 0f;
 				_lastSceneTick = -1f;
 				return;

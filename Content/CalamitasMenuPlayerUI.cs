@@ -141,6 +141,11 @@ namespace DieWithASmile.Content
 		{
 			bool pressed = Main.mouseLeft && !_mouseHeld;
 			_mouseHeld = Main.mouseLeft;
+			if (!Main.gameMenu || !CoolerMenuCompat.OnTitleLike) {
+				StopDrag();
+				_hover = false;
+				return;
+			}
 
 			if (CalamitasMenuPanels.OverlayOpen || CalamitasMenuLayout.Busy) {
 				StopDrag();
@@ -194,7 +199,7 @@ namespace DieWithASmile.Content
 
 		internal static void Draw(SpriteBatch spriteBatch, float fade)
 		{
-			if (fade <= 0f || !DieWithASmileSettings.PlayerEnabled)
+			if (fade <= 0f || !DieWithASmileSettings.PlayerEnabled || !CoolerMenuCompat.OnTitleLike)
 				return;
 
 			Vector2 center = Anchor;

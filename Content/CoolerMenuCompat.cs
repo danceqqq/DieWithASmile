@@ -13,6 +13,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using Terraria.UI;
 using Terraria.UI.Chat;
 
 namespace DieWithASmile.Content
@@ -41,8 +42,31 @@ namespace DieWithASmile.Content
 			}
 		}
 
+		internal static bool WorldGenUiActive =>
+			WorldGen.generatingWorld || WorldLoadUiOpen;
+
+		internal static bool MenuBackdropActive =>
+			Main.gameMenu && !WorldGenUiActive;
+
 		internal static bool OnTitleLike =>
-			Main.menuMode == 0 || (ModEnabled && Main.menuMode == CoolerMenuMode);
+			MenuBackdropActive &&
+			(Main.menuMode == 0 || (ModEnabled && Main.menuMode == CoolerMenuMode));
+
+		private static bool WorldLoadUiOpen
+		{
+			get
+			{
+				try {
+					UIState state = Main.MenuUI?.CurrentState;
+					if (state == null)
+						return false;
+					return state.GetType().Name.Contains("WorldLoad", StringComparison.Ordinal);
+				}
+				catch {
+					return false;
+				}
+			}
+		}
 
 		public override void PostSetupContent()
 		{
@@ -125,6 +149,9 @@ namespace DieWithASmile.Content
 
 		private static void DrawCoreToggle(Action orig)
 		{
+			if (WorldGenUiActive)
+				return;
+
 			if (!CalamitasMenuChrome.Active || !ModEnabled) {
 				orig();
 				return;
