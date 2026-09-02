@@ -1,3 +1,10 @@
+Version 2.7.9
+
+Player
+- The playlist starts once when the title appears, not when mods finish loading and again when the menu opens (reported by DMolRod)
+- Leaving a world no longer plays a second fade-out when the title loads (reported by DMolRod)
+- Other-mod logos and skies (Infernum and similar) no longer set the game music volume to 0 (reported by DMolRod)
+
 Version 2.7.8
 
 Title

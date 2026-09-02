@@ -3,6 +3,7 @@ using System.Reflection;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace DieWithASmile.Content
 {
@@ -12,8 +13,31 @@ namespace DieWithASmile.Content
 		private static FieldInfo _lastSelected;
 		private static FieldInfo _loading;
 		private static int _restoreCooldown;
+		private static int _loadModsId = -1;
 
 		internal static bool MenuStillLoading => _loading?.GetValue(null) is true;
+
+		internal static bool LoadModsUiActive
+		{
+			get
+			{
+				if (MenuStillLoading)
+					return true;
+				if (_loadModsId >= 0 && Main.menuMode == _loadModsId)
+					return true;
+
+				try {
+					UIState state = Main.MenuUI?.CurrentState;
+					if (state == null)
+						return false;
+					string name = state.GetType().Name;
+					return name.Contains("LoadMods", StringComparison.Ordinal);
+				}
+				catch {
+					return false;
+				}
+			}
+		}
 
 		public override void Load()
 		{
@@ -21,6 +45,9 @@ namespace DieWithASmile.Content
 			_switchToMenu = typeof(MenuLoader).GetField("switchToMenu", flags);
 			_lastSelected = typeof(MenuLoader).GetField("LastSelectedModMenu", flags);
 			_loading = typeof(MenuLoader).GetField("loading", flags);
+			Type iface = typeof(ModLoader).Assembly.GetType("Terraria.ModLoader.UI.Interface");
+			if (iface?.GetField("loadModsID", flags)?.GetValue(null) is int id)
+				_loadModsId = id;
 
 			MethodInfo gotoSaved = typeof(MenuLoader).GetMethod("GotoSavedModMenu", flags);
 			if (gotoSaved != null)

@@ -23,6 +23,7 @@ namespace DieWithASmile.Content
 		private static int _saveDelay;
 		private static int _bars;
 		private static int _lastPercentIndex = -1;
+		private static bool _haveMusicSnapshot;
 		private static float _savedMusic = 1f;
 		private static float _savedSound = 1f;
 		private static float _savedAmbient = 1f;
@@ -226,7 +227,14 @@ namespace DieWithASmile.Content
 
 		private static void CaptureVanillaVolumes()
 		{
-			_savedMusic = Main.musicVolume;
+			if (Main.musicVolume > 0.02f) {
+				_savedMusic = Main.musicVolume;
+				_haveMusicSnapshot = true;
+			}
+			else if (!_haveMusicSnapshot) {
+				_savedMusic = Main.musicVolume;
+			}
+
 			_savedSound = Main.soundVolume;
 			_savedAmbient = Main.ambientVolume;
 		}

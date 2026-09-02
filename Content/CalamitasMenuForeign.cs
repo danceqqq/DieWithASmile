@@ -180,6 +180,8 @@ namespace DieWithASmile.Content
 
 		private static void DoUpdateHook(On_Main.orig_DoUpdate orig, Main self, ref GameTime gameTime)
 		{
+			float volume = Main.musicVolume;
+			CalamitasMenuPlaylist.PrepareFrameAudio();
 			if (!Main.gameMenu || !CoolerMenuCompat.MenuBackdropActive)
 				PopAll();
 			else if (!CalamitasMenuConflict.Blocking)
@@ -190,6 +192,7 @@ namespace DieWithASmile.Content
 				orig(self, ref gameTime);
 			}
 			finally {
+				CalamitasMenuPlaylist.RestoreIfStolen(volume);
 				PopAll();
 				if (Main.gameMenu && MenuLoader.CurrentMenu is DieWithASmileCalamitasMenu)
 					CalamitasMenuPlaylist.AssertTitleMusic();
@@ -198,13 +201,17 @@ namespace DieWithASmile.Content
 
 		private static void DoDrawHook(On_Main.orig_DoDraw orig, Main self, GameTime gameTime)
 		{
+			float volume = Main.musicVolume;
 			if (Main.gameMenu && CoolerMenuCompat.MenuBackdropActive && !CalamitasMenuConflict.Blocking)
 				PushCurrentForWallpaper();
 			try {
 				orig(self, gameTime);
 			}
 			finally {
+				CalamitasMenuPlaylist.RestoreIfStolen(volume);
 				PopAll();
+				if (Main.gameMenu && MenuLoader.CurrentMenu is DieWithASmileCalamitasMenu)
+					CalamitasMenuPlaylist.AssertTitleMusic();
 			}
 		}
 
@@ -509,6 +516,7 @@ namespace DieWithASmile.Content
 			if (tml == null)
 				return;
 
+			float volume = Main.musicVolume;
 			if (_swapDepth++ == 0)
 				_savedCurrent = _currentMenu.GetValue(null) as ModMenu;
 
@@ -543,6 +551,7 @@ namespace DieWithASmile.Content
 			}
 			finally {
 				PopCurrentForWallpaper();
+				CalamitasMenuPlaylist.RestoreIfStolen(volume);
 			}
 		}
 
@@ -626,6 +635,7 @@ namespace DieWithASmile.Content
 				return false;
 
 			try {
+				float volume = Main.musicVolume;
 				PreparePass(menu, DrawMode.Background, new Vector2(Main.screenWidth * 0.5f, 100f), 1f, fade);
 				bool tookOver = false;
 				if (HasLogoHooks(menu))
@@ -645,6 +655,7 @@ namespace DieWithASmile.Content
 				RestoreBatch(spriteBatch, Matrix.Identity);
 				if (fade < 0.999f)
 					spriteBatch.Draw(TextureAssets.MagicPixel.Value, CalamitasMenuDraw.CoverRect, Color.Black * (1f - fade));
+				CalamitasMenuPlaylist.RestoreIfStolen(volume);
 			}
 			catch {
 				DieWithASmileSettings.AbandonBrokenWallpaper();
@@ -666,6 +677,7 @@ namespace DieWithASmile.Content
 
 			float cap = MathHelper.Min(520f, Main.screenWidth * 0.38f);
 			float intended = cap / Math.Max(1, tex.Width) * userScale;
+			float volume = Main.musicVolume;
 			if (!HasLogoHooks(menu) || PaintsSkyOnly(menu)) {
 				_hover = Vector2.Zero;
 				spriteBatch.Draw(tex, center, null, Color.White * fade, 0f, tex.Size() * 0.5f, intended, SpriteEffects.None, 0f);
@@ -675,6 +687,7 @@ namespace DieWithASmile.Content
 			PreparePass(menu, DrawMode.Logo, center, intended, fade);
 			bool drewDefault = RunLogoHooks(spriteBatch, menu);
 			EndPass();
+			CalamitasMenuPlaylist.RestoreIfStolen(volume);
 			Vector2 visual = center + _hover;
 			if (drewDefault || !_sawLogoDraw)
 				spriteBatch.Draw(tex, visual, null, _liveColor, _liveRot, tex.Size() * 0.5f, intended, SpriteEffects.None, 0f);
@@ -729,6 +742,7 @@ namespace DieWithASmile.Content
 
 		private static bool RunLogoHooks(SpriteBatch spriteBatch, ModMenu menu)
 		{
+			float volume = Main.musicVolume;
 			bool drawDefault = true;
 			try {
 				drawDefault = menu.PreDrawLogo(spriteBatch, ref _liveCenter, ref _liveRot, ref _liveScale, ref _liveColor);
@@ -742,6 +756,7 @@ namespace DieWithASmile.Content
 			catch {
 			}
 
+			CalamitasMenuPlaylist.RestoreIfStolen(volume);
 			return drawDefault;
 		}
 
